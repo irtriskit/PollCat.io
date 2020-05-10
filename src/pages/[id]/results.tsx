@@ -5,13 +5,22 @@ import {useRouter} from "next/router";
 import {PollResults} from "../../components/PollResults";
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
+import TagManager from 'react-gtm-module';
+import React, { useEffect } from 'react';
 
 export default function Vote() {
     const router = useRouter();
     const { id } = router.query;
+    const tagManagerArgs = {
+      id: 'GTM-5JNZP5T'
+    }
 
     // On first render id is null
     if (!id) return null;
+
+    useEffect(() => {     
+      TagManager.initialize(tagManagerArgs)
+    });
 
     return (
         <div className="container">

@@ -4,8 +4,21 @@ import {ThemeProvider} from "styled-components";
 import {baseTheme} from "../theme";
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import TagManager from 'react-gtm-module';
+import React, { useEffect } from 'react';
 
 export default function Home() {
+
+  const tagManagerArgs = {
+    id: 'GTM-5JNZP5T'
+  }
+  
+  // Similar to componentDidMount and componentDidUpdate:  
+  useEffect(() => {    
+    // Update the document title using the browser API    
+    TagManager.initialize(tagManagerArgs)
+  });
+
   return (
 
     <div className="container">
@@ -13,6 +26,7 @@ export default function Home() {
       <Head>
         <title>PollCat.io</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Easy live polling for the unbuttoned people of the world." />
       </Head>
 
       <ThemeProvider theme={baseTheme}>
