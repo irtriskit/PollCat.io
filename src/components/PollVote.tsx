@@ -87,7 +87,7 @@ export const PollVote: React.FC<PollVoteProps> = ({
         PollApi.postVote(vote)
             .then(() => {
                 // if (isFirstParty) {
-                Router.push(`/${pollId}/results`);
+                Router.push('/[id]/results', `/${pollId}/results`);
                 // }
             })
             .catch(console.error);
