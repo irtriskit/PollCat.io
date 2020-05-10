@@ -9,7 +9,7 @@ export default function Home() {
     <div className="container">
 
       <Head>
-        <title>Pollcat.io</title>
+        <title>PollCat.io</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -90,7 +90,7 @@ export default function Home() {
             <h1>PollCat.io</h1>
 
             <div className="quote">
-              <img src="https://pbs.twimg.com/media/EIVIxZWW4AEKQDT.jpg" alt="Polla the Polecat" height="64px" />
+              <img src="/polla.jpg" alt="Polla the Polecat" height="64px" />
               <span className="quote-text">This is how we poll. We poll like this.</span>
             </div>
 
