@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="content">
 
         <style jsx>{`
           header {
@@ -80,6 +80,25 @@ export default function Home() {
             background-color: rgb(23, 34, 59);
             font-family: sans-serif;
             margin: 0;
+          }
+
+          .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Avoid the IE 10-11 'min-height' bug. */
+          }
+              
+          .content {
+              flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+          }
+          
+          footer {
+              flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+          }
+          
+          * {
+              box-sizing: border-box;
           }
         `}</style>
 
