@@ -9,11 +9,11 @@ export default function Home() {
     <div className="container">
 
       <Head>
-        <title>Pollcat.io</title>
+        <title>PollCat.io</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="content">
 
         <style jsx>{`
           header {
@@ -81,6 +81,25 @@ export default function Home() {
             font-family: sans-serif;
             margin: 0;
           }
+
+          .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Avoid the IE 10-11 'min-height' bug. */
+          }
+              
+          .content {
+              flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+          }
+          
+          footer {
+              flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+          }
+          
+          * {
+              box-sizing: border-box;
+          }
         `}</style>
 
         <ThemeProvider theme={baseTheme}>
@@ -90,7 +109,7 @@ export default function Home() {
             <h1>PollCat.io</h1>
 
             <div className="quote">
-              <img src="https://pbs.twimg.com/media/EIVIxZWW4AEKQDT.jpg" alt="Polla the Polecat" height="64px" />
+              <img src="/polla.jpg" alt="Polla the Polecat" height="64px" />
               <span className="quote-text">This is how we poll. We poll like this.</span>
             </div>
 
