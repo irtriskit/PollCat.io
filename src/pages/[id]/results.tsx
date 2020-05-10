@@ -3,7 +3,7 @@ import {ThemeProvider} from "styled-components";
 import {baseTheme} from "../../theme";
 import {useRouter} from "next/router";
 import {PollResults} from "../../components/PollResults";
-import { Quoter } from '../../components/Quoter';
+import { Header } from '../../components/Header';
 
 export default function Vote() {
     const router = useRouter();
@@ -22,51 +22,6 @@ export default function Vote() {
 
             <main>
                 <style jsx>{`
-                  header {
-                    align-items: center;
-                    background-color: rgb(38, 56, 89);
-                    color: white;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    margin-bottom: 20px;
-                    padding: 20px;
-                  }
-
-                  header a {
-                    color: white;
-                    text-decoration: none;
-                  }
-
-                  .quote {
-                    align-items: center;
-                    display: flex;
-                  }
-
-                  .quote-text {
-                    color: rgb(23, 34, 59);
-                    position: relative;
-                    background: rgb(255, 103, 104);
-                    border-radius: .4em;
-                    padding: 10px;
-                    margin-left: 15px;
-                    line-height: 1.5;
-                  }
-          
-                  .quote-text:after {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    width: 0;
-                    height: 0;
-                    border: 8px solid transparent;
-                    border-right-color: rgb(255, 103, 104);
-                    border-left: 0;
-                    margin-top: -8px;
-                    margin-left: -8px;
-                  }
-        
                   .poll-container {
                     margin: 0 auto;
                     max-width: 500px;
@@ -95,13 +50,7 @@ export default function Vote() {
                 `}</style>
 
                 <ThemeProvider theme={baseTheme}>
-                    <header>
-                        <a href="/"><h1>PollCat.io</h1></a>
-                        <div className="quote">
-                            <img src="/polla.jpg" alt="Polla the Polecat" />
-                            <span className="quote-text"><Quoter /></span>
-                        </div>
-                    </header>
+                  <Header />
                     <div className="poll-container">
                         <PollResults pollId={id?.toString()}/>
                     </div>
