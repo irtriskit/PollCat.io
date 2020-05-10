@@ -33,6 +33,11 @@ export default function Vote() {
                     padding: 20px;
                   }
 
+                  header a {
+                    color: white;
+                    text-decoration: none;
+                  }
+
                   .quote {
                     align-items: center;
                     display: flex;
@@ -91,7 +96,7 @@ export default function Vote() {
 
                 <ThemeProvider theme={baseTheme}>
                     <header>
-                        <h1>PollCat.io</h1>
+                    <a href="/"><h1>PollCat.io</h1></a>
                         <div className="quote">
                             <img src="/polla.jpg" alt="Polla the Polecat" />
                             <span className="quote-text"><Quoter /></span>
