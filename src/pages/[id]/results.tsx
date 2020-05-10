@@ -28,7 +28,6 @@ export default function Vote() {
             <Head>
                 <title>Pollcat.io</title>
                 <link rel="icon" href="/favicon.ico"/>
-                <meta name="description" content="Easy live polling for the unbuttoned people of the world." />
             </Head>
 
             <ThemeProvider theme={baseTheme}>
