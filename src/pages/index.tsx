@@ -4,8 +4,21 @@ import {ThemeProvider} from "styled-components";
 import {baseTheme} from "../theme";
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import TagManager from 'react-gtm-module';
+import React, { useEffect } from 'react';
 
 export default function Home() {
+
+  const tagManagerArgs = {
+    id: 'GTM-5JNZP5T'
+  }
+  
+  // Similar to componentDidMount and componentDidUpdate:  
+  useEffect(() => {    
+    // Update the document title using the browser API    
+    TagManager.initialize(tagManagerArgs)
+  });
+
   return (
 
     <div className="container">
