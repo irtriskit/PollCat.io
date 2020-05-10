@@ -2,6 +2,7 @@ import Head from 'next/head'
 import {PollCreate} from "../components/PollCreate";
 import {ThemeProvider} from "styled-components";
 import {baseTheme} from "../theme";
+import { Quoter } from '../components/Quoter';
 
 export default function Home() {
   return (
@@ -109,8 +110,8 @@ export default function Home() {
             <h1>PollCat.io</h1>
 
             <div className="quote">
-              <img src="/polla.jpg" alt="Polla the Polecat" height="64px" />
-              <span className="quote-text">This is how we poll. We poll like this.</span>
+              <img src="/polla.jpg" alt="Polla the Polecat" />
+              <span className="quote-text"><Quoter /></span>
             </div>
 
           </header>

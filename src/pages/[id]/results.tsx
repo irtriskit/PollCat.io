@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import {ThemeProvider} from "styled-components";
 import {baseTheme} from "../../theme";
-import {PollVote} from "../../components/PollVote";
 import {useRouter} from "next/router";
 import {PollResults} from "../../components/PollResults";
+import { Quoter } from '../../components/Quoter';
 
 export default function Vote() {
     const router = useRouter();
@@ -93,9 +93,8 @@ export default function Vote() {
                     <header>
                         <h1>PollCat.io</h1>
                         <div className="quote">
-                            <img src="https://pbs.twimg.com/media/EIVIxZWW4AEKQDT.jpg" alt="Polla the Polecat"
-                                 height="64px"/>
-                            <span className="quote-text">This is how we poll. We poll like this.</span>
+                            <img src="/polla.jpg" alt="Polla the Polecat" />
+                            <span className="quote-text"><Quoter /></span>
                         </div>
                     </header>
                     <div className="poll-container">
