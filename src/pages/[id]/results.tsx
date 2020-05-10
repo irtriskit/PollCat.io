@@ -120,7 +120,8 @@ export default function Vote() {
                     color: white;
                   }
                 `}</style>
-                <a href="#">Donate</a> | <a href="#">Support</a>
+                
+                <a href="https://www.paypal.me/pollcatdotio" target="_blank">Donate</a> | <a href="https://discord.gg/QH6tH4C" target="_blank">Support</a>
             </footer>
         </div>
     )
