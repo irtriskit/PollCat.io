@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import {PollCreate} from "../components/PollCreate";
+import {ThemeProvider} from "styled-components";
+import {baseTheme} from "../theme";
 
 export default function Home() {
   return (
@@ -9,7 +12,9 @@ export default function Home() {
       </Head>
 
       <main>
-          Hey there
+        <ThemeProvider theme={baseTheme}>
+          <PollCreate />
+        </ThemeProvider>
       </main>
 
       <footer>
