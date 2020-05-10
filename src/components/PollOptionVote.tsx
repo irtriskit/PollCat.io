@@ -5,10 +5,6 @@ import { ESizes } from '../models/Sizes';
 
 const StyledInput = styled.input`
     display: none;
-    
-    &:checked + label {
-        border: 2px red solid;
-    }
 `;
 
 const StyledLabel = styled.span`
@@ -25,14 +21,8 @@ const StyledPollOptionVote = styled.label`
     padding: 15px;
     margin-bottom: 10px;
     
-    //border: 2px red solid;
-    
-    //input[type="radio"]:checked+label {
-    //    border: 2px red solid;
-    //}
-    
     &.active-option {
-        outline: 2px solid red;
+        outline: 2px solid ${({theme}) => theme.colors.accent};
     }
 `;
 
