@@ -12,6 +12,7 @@ import { PollApi } from '../helpers/PollApi';
 import { Urls } from '../Urls';
 // import { isFirstParty } from '../helpers/AppHelper';
 import { PollButton } from './PollButton';
+import Router from "next/router";
 
 const StyledPollCreate = styled.form<PollCreateProps>`
     width: 100%;
@@ -84,7 +85,7 @@ export const PollCreate = () => {
         PollApi.postPoll(poll)
             .then((response) => {
                 // if (isFirstParty) {
-                    window.location.href = `${Urls.siteRootUrl}/${response.data}/vote`;
+                Router.push('/[id]/vote', `/${response.data}/vote`);
                 // }
             })
             .catch(console.error);
