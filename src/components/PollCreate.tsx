@@ -93,13 +93,13 @@ export const PollCreate = () => {
     return (
         <StyledPollCreate onSubmit={handleSubmit} ref={form}>
             <TitleContainer>
-                <StyledTitleInput type={'text'} placeholder={'Poll title'} name={'title'} autoComplete="off" />
+                <StyledTitleInput type={'text'} placeholder={'Type your question here'} name={'title'} autoComplete="off" />
             </TitleContainer>
-            <PollField name={'option1'} placeholder={'Poll option 1'} />
-            <PollField name={'option2'} placeholder={'Poll option 2'} />
-            <PollField name={'option3'} placeholder={'Poll option 3'} />
-            <PollField name={'option4'} placeholder={'Poll option 4'} />
-            <PollField name={'option5'} placeholder={'Poll option 5'} />
+            <PollField name={'option1'} placeholder={'Enter poll option'} />
+            <PollField name={'option2'} placeholder={'Enter poll option'} />
+            <PollField name={'option3'} placeholder={'Enter poll option'} />
+            <PollField name={'option4'} placeholder={'Enter poll option'} />
+            <PollField name={'option5'} placeholder={'Enter poll option'} />
             <StyledActionContainer>
                 <PollButton type={'submit'}>Create Poll</PollButton>
             </StyledActionContainer>

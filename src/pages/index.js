@@ -56,6 +56,12 @@ export default function Home() {
             margin-left: -8px;
           }
 
+          .poll-container {
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 0 20px;
+          }
+
           section {
               background-color: rgb(255, 103, 104);
               color: rgb(23, 34, 59);
@@ -66,6 +72,14 @@ export default function Home() {
 
           section a {
             color: rgb(38, 56, 89);
+          }
+        `}</style>
+
+        <style jsx global>{`
+          body {
+            background-color: rgb(23, 34, 59);
+            font-family: sans-serif;
+            margin: 0;
           }
         `}</style>
 
@@ -82,7 +96,9 @@ export default function Home() {
 
           </header>
 
-          <PollCreate />
+          <div className="poll-container">
+            <PollCreate />
+          </div>
 
           <section>
             <h2>What is PollCat.io?</h2>
