@@ -9,7 +9,6 @@ const StyledPollButton = styled.button<PollButtonProps>`
     outline: none;
     border-width: 0;
     font-size: 20px;
-    margin-right: 20px;
     padding: 10px 30px;
     cursor: pointer;
     transition: 100ms all ease-in-out;
