@@ -12,6 +12,7 @@ import { AxiosResponse } from 'axios';
 import { PollApi } from '../helpers/PollApi';
 import { PollOptionVote } from './PollOptionVote';
 import { Urls } from '../Urls';
+import Router from "next/router";
 // import { isFirstParty } from '../helpers/AppHelper';
 
 const StyledPollVote = styled.form<PollVoteProps>`
@@ -86,7 +87,7 @@ export const PollVote: React.FC<PollVoteProps> = ({
         PollApi.postVote(vote)
             .then(() => {
                 // if (isFirstParty) {
-                    window.location.href = `${Urls.siteRootUrl}/${pollId}/results`;
+                Router.push(`/${pollId}/results`);
                 // }
             })
             .catch(console.error);
