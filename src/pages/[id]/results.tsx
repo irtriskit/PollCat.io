@@ -4,6 +4,7 @@ import {baseTheme} from "../../theme";
 import {useRouter} from "next/router";
 import {PollResults} from "../../components/PollResults";
 import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
 
 export default function Vote() {
     const router = useRouter();
@@ -20,7 +21,10 @@ export default function Vote() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            <main>
+            <ThemeProvider theme={baseTheme}>
+
+              <main>
+
                 <style jsx>{`
                   .poll-container {
                     margin: 0 auto;
@@ -48,30 +52,19 @@ export default function Vote() {
                     margin: 0;
                   }
                 `}</style>
+                  
+                <Header />
 
-                <ThemeProvider theme={baseTheme}>
-                  <Header />
-                    <div className="poll-container">
-                        <PollResults pollId={id?.toString()}/>
-                    </div>
-                </ThemeProvider>
-            </main>
-            <footer>
-                <style jsx>{`
-                  footer {
-                    background-color: rgb(38, 56, 89);
-                    color: white;
-                    padding: 20px;
-                    text-align: center;
-                  }
-        
-                  footer a {
-                    color: white;
-                  }
-                `}</style>
-                
-                <a href="https://www.paypal.me/pollcatdotio" target="_blank">Donate</a> | <a href="https://discord.gg/QH6tH4C" target="_blank">Support</a>
-            </footer>
+                <div className="poll-container">
+                    <PollResults pollId={id?.toString()}/>
+                </div>
+                  
+              </main>
+
+              <Footer />
+
+            </ThemeProvider>
+            
         </div>
     )
 }

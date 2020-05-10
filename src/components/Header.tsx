@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { ESizes } from '../models/Sizes';
 import { Quoter } from './Quoter';
 
 const StyledHeader = styled.header`
@@ -13,7 +12,7 @@ const StyledHeader = styled.header`
     padding: 20px;
 
     a {
-        color: white;
+        color: ${({theme}) => theme.colors.tertiary};
         text-decoration: none;
     }
 `;
