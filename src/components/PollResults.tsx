@@ -78,7 +78,7 @@ export const PollResults: React.FC<PollResultsProps> = ({
         setActivePoll(poll);
 
         let voteCount = 0;
-        poll.options.forEach(o => voteCount += o.optionVotes);
+        poll.options.sort((a, b) => b.optionVotes - a.optionVotes).forEach(o => voteCount += o.optionVotes);
         setTotalVotes(voteCount);
     };
 
