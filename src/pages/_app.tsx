@@ -7,7 +7,7 @@ import TagManager from 'react-gtm-module';
 function MyApp({ Component, pageProps }: AppProps) {
 
     const tagManagerArgs = {
-        id: 'GTM-5JNZP5T'
+        gtmId: 'GTM-5JNZP5T'
     }
 
     // Similar to componentDidMount and componentDidUpdate:  
