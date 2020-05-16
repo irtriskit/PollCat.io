@@ -4,6 +4,7 @@ import { AppProps } from 'next/app'
 import TagManager from 'react-gtm-module';
 import {ThemeProvider} from "styled-components";
 import {baseTheme, strawTheme} from "../theme";
+import { useStrawTheme } from '../useStrawTheme';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -17,20 +18,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         TagManager.initialize(tagManagerArgs)
     });
 
-    const [theme, setTheme] = useState('baseTheme');
+    const [theme, toggleTheme, componentMounted] = useStrawTheme();
 
-    const toggleTheme = () => {
-        if (theme === 'baseTheme') {
-            setTheme('strawTheme');
-        } else {
-            setTheme('baseTheme');
-        }
-    }
+    const themeMode = theme === 'baseTheme' ? baseTheme : strawTheme;
 
   return (
-    <ThemeProvider theme={theme === 'baseTheme' ? baseTheme : strawTheme}>
+    <ThemeProvider theme={themeMode}>
         <Layout>
-            <button onClick={toggleTheme}>Toggle</button>
             <Component {...pageProps} />
         </Layout>
     </ThemeProvider>

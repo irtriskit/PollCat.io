@@ -20,11 +20,12 @@ const StyledHeader = styled.header`
     }
 `;
 
-export const Header = () => {
+export const Header = ({toggleTheme}) => {
     return (
         <StyledHeader>
             <div className="content-container">
                 <a href="/"><h1>PollCat.io</h1></a>
+                <button onClick={ toggleTheme }>Toggle</button>
                 <Quoter />
             </div>
         </StyledHeader>
