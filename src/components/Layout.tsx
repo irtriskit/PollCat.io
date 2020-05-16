@@ -4,6 +4,7 @@ function Layout(props) {
         {props.children}
         <style jsx global>{`
             body {
+                background-color: ${({theme}) => theme.colors.primary};
                 font-family: sans-serif;
                 margin: 0;
             }
