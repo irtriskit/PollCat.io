@@ -1,6 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 // Import styled components ServerStyleSheet
 import { ServerStyleSheet } from 'styled-components';
+import Layout from '../components/Layout';
 
 interface Props {
     styleTags: any
@@ -14,6 +15,7 @@ export default class MyDocument extends Document<Props> {
     // Step 2: Retrieve styles from components in the page
     const page = renderPage((App) => (props) =>
       sheet.collectStyles(<App {...props} />),
+      sheet.collectStyles(<Layout />),
     );
 
     // Step 3: Extract the styles as <style> tags
