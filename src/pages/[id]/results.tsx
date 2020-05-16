@@ -3,8 +3,6 @@ import {useRouter} from "next/router";
 import {PollResults} from "../../components/PollResults";
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
-import {ThemeProvider} from "styled-components";
-import {baseTheme} from "../../theme";
 
 export default function Vote() {
     const router = useRouter();
@@ -21,19 +19,17 @@ export default function Vote() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            <ThemeProvider theme={baseTheme}>
-              <main className="content">  
-                  
-                <Header />
+            <main className="content">  
+                
+              <Header />
 
-                <div className="poll-container">
-                    <PollResults pollId={id?.toString()}/>
-                </div>
-                  
-              </main>
+              <div className="poll-container">
+                  <PollResults pollId={id?.toString()}/>
+              </div>
+                
+            </main>
 
-              <Footer />
-            </ThemeProvider>
+            <Footer />
 
         </div>
     )
