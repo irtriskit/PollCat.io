@@ -22,7 +22,7 @@ const StyledPollVote = styled.form<PollVoteProps>`
     flex-direction: column;
 `;
 
-const StyledH3 = styled.h3`
+const StyledPollTitle = styled.h2`
     font-size: ${({theme}) => theme.font.sizes[ESizes.largest]};
     font-family: ${({theme}) => theme.font.family};
     color: ${({theme}) => theme.colors.tertiary};
@@ -96,7 +96,7 @@ export const PollVote: React.FC<PollVoteProps> = ({
     return (
         <StyledPollVote onSubmit={handleSubmit} method="post">
             <StyledDiv>
-                <StyledH3>{activePoll && activePoll.title}</StyledH3>
+                <StyledPollTitle>{activePoll && activePoll.title}</StyledPollTitle>
             </StyledDiv>
             {
                 activePoll
