@@ -17,11 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     });
 
   return (
-    <Container>
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
-    </Container>
+    <Layout>
+        <Component {...pageProps} />
+    </Layout>
   )
 }
 
