@@ -4,7 +4,7 @@ import {useRouter} from "next/router";
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 
-export default function Vote() {
+export default function Vote({ toggleTheme }) {
   
   const router = useRouter();
   const { id } = router.query;
@@ -22,10 +22,10 @@ export default function Vote() {
 
           <main className="content"> 
 
-              <Header />
+              <Header toggleTheme={toggleTheme} />
 
               <div className="poll-container">
-                <PollVote pollId={id?.toString()}/>
+                  <PollVote pollId={id?.toString()}/>
               </div>  
 
           </main>

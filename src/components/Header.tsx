@@ -37,18 +37,14 @@ const StyledHeader = styled.header`
     }
 `;
 
-export const Header = (props) => {
-
-    function toggleTheme() {
-        props.toggleTheme;
-    }
+export const Header = ({ toggleTheme }) => {
 
     return (
         <StyledHeader>
             <div className="content-container">
                 <a href="/"><h1>PollCat.io</h1></a>
                 <div className="logo">
-                    <button onClick={toggleTheme}>
+                    <button onClick={toggleTheme} >
                         <img src="/polla.jpg" alt="Polla the Polecat" />
                     </button>
                     <Quoter />

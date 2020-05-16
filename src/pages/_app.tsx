@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../components/Layout'
 import { AppProps } from 'next/app'
 import TagManager from 'react-gtm-module';
@@ -22,13 +22,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     const themeMode = theme === 'baseTheme' ? baseTheme : strawTheme;
 
-  return (
-    <ThemeProvider theme={themeMode}>
-        <Layout>
-            <Component {...pageProps} toggleTheme={toggleTheme} />
-        </Layout>
-    </ThemeProvider>
-  )
+    if (!componentMounted) {
+        return <div />
+    };
+
+    return (
+        <ThemeProvider theme={themeMode}>
+            <Layout>
+                <Component {...pageProps} toggleTheme={toggleTheme} />
+            </Layout>
+        </ThemeProvider>
+    )
 }
 
 export default MyApp
