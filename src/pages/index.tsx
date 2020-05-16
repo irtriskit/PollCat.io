@@ -3,11 +3,12 @@ import {PollCreate} from "../components/PollCreate";
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { About } from '../components/About';
-import { useStrawTheme } from '../useStrawTheme';
 
-export default function Home() {
+export default function Home(props) {
 
-  const [theme, toggleTheme] = useStrawTheme();
+  function toggleTheme() {
+    props.toggleTheme;
+}
 
   return (
 
@@ -21,7 +22,7 @@ export default function Home() {
       
       <main className="content">
 
-        <Header toggleTheme={toggleTheme}/>
+        <Header toggleTheme={toggleTheme} />
 
         <div className="poll-container">
           <PollCreate />

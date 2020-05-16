@@ -37,7 +37,12 @@ const StyledHeader = styled.header`
     }
 `;
 
-export const Header = ({toggleTheme}) => {
+export const Header = (props) => {
+
+    function toggleTheme() {
+        props.toggleTheme;
+    }
+
     return (
         <StyledHeader>
             <div className="content-container">

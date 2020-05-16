@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={themeMode}>
         <Layout>
-            <Component {...pageProps} />
+            <Component {...pageProps} toggleTheme={toggleTheme} />
         </Layout>
     </ThemeProvider>
   )

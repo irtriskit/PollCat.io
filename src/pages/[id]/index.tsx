@@ -3,11 +3,9 @@ import {PollVote} from "../../components/PollVote";
 import {useRouter} from "next/router";
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
-import { useStrawTheme } from '../../useStrawTheme';
 
 export default function Vote() {
-  const [theme, toggleTheme] = useStrawTheme();
-
+  
   const router = useRouter();
   const { id } = router.query;
 
@@ -24,7 +22,7 @@ export default function Vote() {
 
           <main className="content"> 
 
-              <Header toggleTheme={toggleTheme} />
+              <Header />
 
               <div className="poll-container">
                 <PollVote pollId={id?.toString()}/>
