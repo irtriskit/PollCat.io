@@ -3,34 +3,37 @@ import {PollVote} from "../../components/PollVote";
 import {useRouter} from "next/router";
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
+import { useStrawTheme } from '../../useStrawTheme';
 
 export default function Vote() {
-    const router = useRouter();
-    const { id } = router.query;
+  const [theme, toggleTheme] = useStrawTheme();
 
-    // On first render id is null
-    if (!id) return null;
+  const router = useRouter();
+  const { id } = router.query;
 
-    return (
-        <div className="container">
+  // On first render id is null
+  if (!id) return null;
 
-            <Head>
-                <title>Pollcat.io</title>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
+  return (
+      <div className="container">
 
-            <main className="content"> 
+          <Head>
+              <title>Pollcat.io</title>
+              <link rel="icon" href="/favicon.ico"/>
+          </Head>
 
-              <Header />
+          <main className="content"> 
+
+              <Header toggleTheme={toggleTheme} />
 
               <div className="poll-container">
                 <PollVote pollId={id?.toString()}/>
               </div>  
 
-            </main>
+          </main>
 
-            <Footer />
+          <Footer />
 
-        </div>
-    )
+      </div>
+  )
 }

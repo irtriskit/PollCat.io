@@ -45,7 +45,6 @@ const ActiveQuote : React.FC<IQuote> = ({
 }) => {
     return (
         <StyledActiveQuote>
-            <img src="/polla.jpg" alt="Polla the Polecat" />
             <span className="quote-text">{ text }</span>
         </StyledActiveQuote>
     );
