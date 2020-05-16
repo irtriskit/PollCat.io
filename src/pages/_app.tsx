@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../components/Layout'
 import { AppProps } from 'next/app'
 import TagManager from 'react-gtm-module';
@@ -17,9 +17,20 @@ function MyApp({ Component, pageProps }: AppProps) {
         TagManager.initialize(tagManagerArgs)
     });
 
+    const [theme, setTheme] = useState('baseTheme');
+
+    const toggleTheme = () => {
+        if (theme === 'baseTheme') {
+            setTheme('strawTheme');
+        } else {
+            setTheme('baseTheme');
+        }
+    }
+
   return (
-    <ThemeProvider theme={strawTheme}>
+    <ThemeProvider theme={theme === 'baseTheme' ? baseTheme : strawTheme}>
         <Layout>
+            <button onClick={toggleTheme}>Toggle</button>
             <Component {...pageProps} />
         </Layout>
     </ThemeProvider>
