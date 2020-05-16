@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
     }
 
     a {
-        color: ${({theme}) => theme.colors.tertiary};
+        color: ${({theme}) => theme.colors.siteTitle};
         text-decoration: none;
     }
 `;

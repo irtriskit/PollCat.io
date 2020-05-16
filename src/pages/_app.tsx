@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import { AppProps } from 'next/app'
 import TagManager from 'react-gtm-module';
 import {ThemeProvider} from "styled-components";
-import {baseTheme} from "../theme";
+import {baseTheme, strawTheme} from "../theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     });
 
   return (
-    <ThemeProvider theme={baseTheme}>
+    <ThemeProvider theme={strawTheme}>
         <Layout>
             <Component {...pageProps} />
         </Layout>
