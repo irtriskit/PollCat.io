@@ -22,10 +22,10 @@ const StyledPollResults = styled.div`
     justify-content: center;
 `;
 
-const StyledPollTitle = styled.h3`
-    font-size: ${({theme}) => theme.font.sizes[ESizes.larger]};
+const StyledPollTitle = styled.h2`
+    font-size: ${({theme}) => theme.font.sizes[ESizes.largest]};
     font-family: ${({theme}) => theme.font.family};
-    color: ${({theme}) => theme.colors.accent};
+    color: ${({theme}) => theme.colors.tertiary};
 `;
 
 export const PollResults: React.FC<PollResultsProps> = ({

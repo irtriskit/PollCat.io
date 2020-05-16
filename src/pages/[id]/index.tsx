@@ -3,8 +3,6 @@ import {PollVote} from "../../components/PollVote";
 import {useRouter} from "next/router";
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
-import {ThemeProvider} from "styled-components";
-import {baseTheme} from "../../theme";
 
 export default function Vote() {
     const router = useRouter();
@@ -21,25 +19,17 @@ export default function Vote() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            <ThemeProvider theme={baseTheme}>
-              <main className="content">
+            <main className="content"> 
 
-                <style jsx global>{`
-                  body {
-                    background-color: #17223b;
-                  }
-                `}</style>   
+              <Header />
 
-                <Header />
+              <div className="poll-container">
+                <PollVote pollId={id?.toString()}/>
+              </div>  
 
-                <div className="poll-container">
-                  <PollVote pollId={id?.toString()}/>
-                </div>  
+            </main>
 
-              </main>
-
-              <Footer />
-            </ThemeProvider>
+            <Footer />
 
         </div>
     )
