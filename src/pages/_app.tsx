@@ -3,7 +3,8 @@ import Layout from '../components/Layout'
 import { AppProps } from 'next/app'
 import TagManager from 'react-gtm-module';
 import {ThemeProvider} from "styled-components";
-import {baseTheme} from "../theme";
+import {baseTheme, strawTheme} from "../theme";
+import { useStrawTheme } from '../useStrawTheme';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -17,13 +18,21 @@ function MyApp({ Component, pageProps }: AppProps) {
         TagManager.initialize(tagManagerArgs)
     });
 
-  return (
-    <ThemeProvider theme={baseTheme}>
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
-    </ThemeProvider>
-  )
+    const [theme, toggleTheme, componentMounted] = useStrawTheme();
+
+    const themeMode = theme === 'baseTheme' ? baseTheme : strawTheme;
+
+    if (!componentMounted) {
+        return <div />
+    };
+
+    return (
+        <ThemeProvider theme={themeMode}>
+            <Layout>
+                <Component {...pageProps} toggleTheme={toggleTheme} />
+            </Layout>
+        </ThemeProvider>
+    )
 }
 
 export default MyApp

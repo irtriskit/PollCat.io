@@ -17,8 +17,8 @@ const StyledPollField = styled.div`
 `;
 
 const StyledInput = styled.input`
-    color: ${({theme}) => theme.colors.tertiary};
-    background-color: ${({theme}) => theme.colors.secondary};
+    color: ${({theme}) => theme.colors.pollText};
+    background-color: ${({theme}) => theme.colors.pollBackground};
     font-family: ${({theme}) => theme.font.family};
     font-size: 18px;
     padding: 15px;

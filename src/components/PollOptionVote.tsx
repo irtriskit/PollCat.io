@@ -8,7 +8,7 @@ const StyledInput = styled.input`
 `;
 
 const StyledLabel = styled.span`
-    color: ${({theme}) => theme.colors.tertiary};
+    color: ${({theme}) => theme.colors.pollText};
     font-family: ${({theme}) => theme.font.family};
     font-size: ${({theme}) => theme.font.sizes[ESizes.regular]};
 `;
@@ -16,7 +16,7 @@ const StyledLabel = styled.span`
 const StyledPollOptionVote = styled.label`
     flex: 1 0 auto;
     display: flex;
-    background: ${({theme}) => theme.colors.secondary};
+    background: ${({theme}) => theme.colors.pollBackground};
     align-items: center;
     padding: 15px;
     margin-bottom: 10px;

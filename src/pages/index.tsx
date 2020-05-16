@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { About } from '../components/About';
 
-export default function Home() {
+export default function Home({ toggleTheme }) {
 
   return (
 
@@ -18,7 +18,7 @@ export default function Home() {
       
       <main className="content">
 
-        <Header />
+        <Header toggleTheme={toggleTheme} />
 
         <div className="poll-container">
           <PollCreate />

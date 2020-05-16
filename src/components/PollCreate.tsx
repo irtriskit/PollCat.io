@@ -25,8 +25,8 @@ const StyledPollCreate = styled.form<PollCreateProps>`
 const StyledTitleInput = styled.input`
     max-width: 100%;
     font-size: ${({theme}) => theme.font.sizes[ESizes.larger]};;
-    color: ${({theme}) => theme.colors.tertiary};
-    background-color: ${({theme}) => theme.colors.secondary};
+    color: ${({theme}) => theme.colors.pollText};
+    background-color: ${({theme}) => theme.colors.pollBackground};
     border-width: 0;
     padding: 10px;
     margin-bottom: 20px;

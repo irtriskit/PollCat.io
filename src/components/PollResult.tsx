@@ -5,7 +5,7 @@ import { ESizes } from '../models/Sizes';
 const StyledPollResult = styled.div`
     flex: 1;
     flex-direction: row;
-    background: ${({theme}) => theme.colors.tertiary};
+    background: ${({theme}) => theme.colors.resultBackground};
     align-items: center;
     padding: 15px;
     margin-bottom: 10px;

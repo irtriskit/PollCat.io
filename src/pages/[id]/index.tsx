@@ -4,33 +4,34 @@ import {useRouter} from "next/router";
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 
-export default function Vote() {
-    const router = useRouter();
-    const { id } = router.query;
+export default function Vote({ toggleTheme }) {
+  
+  const router = useRouter();
+  const { id } = router.query;
 
-    // On first render id is null
-    if (!id) return null;
+  // On first render id is null
+  if (!id) return null;
 
-    return (
-        <div className="container">
+  return (
+      <div className="container">
 
-            <Head>
-                <title>Pollcat.io</title>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
+          <Head>
+              <title>Pollcat.io</title>
+              <link rel="icon" href="/favicon.ico"/>
+          </Head>
 
-            <main className="content"> 
+          <main className="content"> 
 
-              <Header />
+              <Header toggleTheme={toggleTheme} />
 
               <div className="poll-container">
-                <PollVote pollId={id?.toString()}/>
+                  <PollVote pollId={id?.toString()}/>
               </div>  
 
-            </main>
+          </main>
 
-            <Footer />
+          <Footer />
 
-        </div>
-    )
+      </div>
+  )
 }

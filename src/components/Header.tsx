@@ -15,17 +15,40 @@ const StyledHeader = styled.header`
     }
 
     a {
-        color: ${({theme}) => theme.colors.tertiary};
+        color: ${({theme}) => theme.colors.siteTitle};
         text-decoration: none;
+    }
+
+    .logo {
+        display:flex;
+    }
+
+    button {
+        border: none;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    img {
+        display: block;
     }
 `;
 
-export const Header = () => {
+export const Header = ({ toggleTheme }) => {
+
     return (
         <StyledHeader>
             <div className="content-container">
                 <a href="/"><h1>PollCat.io</h1></a>
-                <Quoter />
+                <div className="logo">
+                    <button onClick={toggleTheme} >
+                        <img src="/polla.jpg" alt="Polla the Polecat" />
+                    </button>
+                    <Quoter />
+                </div>
             </div>
         </StyledHeader>
     );
