@@ -32,6 +32,11 @@ function Layout(props) {
                 max-width: 500px;
                 padding: 0 20px;
             }
+
+            .content-container {
+                margin: 0 auto;
+                max-width: 1000px;
+            }
         `}</style>
       </div>
     )

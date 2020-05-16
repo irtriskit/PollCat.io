@@ -3,13 +3,16 @@ import styled from 'styled-components';
 import { Quoter } from './Quoter';
 
 const StyledHeader = styled.header`
-    align-items: center;
     background-color: ${({theme}) => theme.colors.secondary};
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     margin-bottom: 20px;
     padding: 20px;
+
+    .content-container {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
     a {
         color: ${({theme}) => theme.colors.tertiary};
@@ -20,8 +23,10 @@ const StyledHeader = styled.header`
 export const Header = () => {
     return (
         <StyledHeader>
-            <a href="/"><h1>PollCat.io</h1></a>
-            <Quoter />
+            <div className="content-container">
+                <a href="/"><h1>PollCat.io</h1></a>
+                <Quoter />
+            </div>
         </StyledHeader>
     );
 };
