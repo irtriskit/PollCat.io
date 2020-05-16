@@ -1,10 +1,16 @@
-function Layout(props) {
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
+
+export const Layout = (props) => {
+
+    const theme = useContext(ThemeContext);
+
     return (
       <div className="page-layout">
         {props.children}
         <style jsx global>{`
             body {
-                background-color: ${({theme}) => theme.colors.primary};
+                background-color: ${theme.colors.primary};
                 font-family: sans-serif;
                 margin: 0;
             }
@@ -40,7 +46,8 @@ function Layout(props) {
             }
         `}</style>
       </div>
-    )
-  }
+    );
+  };
+
+  export default Layout;
   
-  export default Layout
