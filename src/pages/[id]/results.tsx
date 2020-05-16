@@ -22,13 +22,7 @@ export default function Vote() {
             </Head>
 
             <ThemeProvider theme={baseTheme}>
-              <main className="content">
-
-                <style jsx global>{`
-                    body {
-                      background-color: #17223b;
-                    }
-                `}</style>     
+              <main className="content">  
                   
                 <Header />
 

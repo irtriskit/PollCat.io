@@ -21,12 +21,6 @@ export default function Home() {
       <ThemeProvider theme={baseTheme}>
         <main className="content">
 
-          <style jsx global>{`
-            body {
-              background-color: #17223b;
-            }
-          `}</style>  
-
           <Header />
 
           <div className="poll-container">
