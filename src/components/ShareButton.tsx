@@ -1,5 +1,4 @@
 import React, {
-    FormEvent,
     useEffect,
     useState,
 } from 'react';
@@ -30,10 +29,24 @@ const StyledShareButton = styled.button`
 `;
 
 export const ShareButton: React.FC = () => {
+    const [
+        buttonText,
+        setButtonText
+    ] = useState<string>("Share");
+
+    useEffect( () => {
+      const i_id = setInterval(() => {
+        setButtonText("Share")
+      },5000);
+      return () => {
+        clearInterval(i_id);
+      }
+    },[]);
+
     return (
-        <CopyToClipboard text={window.location.href}>
-          <StyledShareButton type="button">Share</StyledShareButton>
+        <CopyToClipboard text={window.location.href}
+            onCopy={() => setButtonText("Copied")}>
+            <StyledShareButton type="button">{buttonText}</StyledShareButton>
         </CopyToClipboard>
     );
 };
-

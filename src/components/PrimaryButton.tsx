@@ -9,6 +9,8 @@ const StyledPrimaryButton = styled.button<PrimaryButtonProps>`
     outline: none;
     border-width: 0;
     font-size: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
     padding: 10px 30px;
     cursor: pointer;
     transition: 100ms all ease-in-out;

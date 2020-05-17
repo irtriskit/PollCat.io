@@ -9,7 +9,7 @@ const StyledLinkButton = styled.a<LinkButtonProps>`
     outline: none;
     border-width: 0;
     font-size: 20px;
-    padding: 10px 30px;
+    padding: 14px 30px 10px;
     cursor: pointer;
     text-decoration: none;
     transition: 100ms all ease-in-out;

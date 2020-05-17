@@ -13,6 +13,9 @@ import { PollResult } from './PollResult';
 import { PollApi } from '../helpers/PollApi';
 import { WebSocketApi } from '../helpers/WebSocketApi';
 import { Urls } from '../Urls';
+import { PrimaryButton } from './PrimaryButton';
+import { LinkButton } from './LinkButton';
+import { ShareButton } from './ShareButton';
 
 const StyledPollResults = styled.div`
     width: 100%;
@@ -26,6 +29,27 @@ const StyledPollTitle = styled.h2`
     font-size: ${({theme}) => theme.font.sizes[ESizes.largest]};
     font-family: ${({theme}) => theme.font.family};
     color: ${({theme}) => theme.colors.tertiary};
+`;
+
+const StyledButtonContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+`;
+
+const StyledTotalVoteContainer = styled.div`
+    font-size: ${({theme}) => theme.font.sizes[ESizes.larger]};
+    font-family: ${({theme}) => theme.font.family};
+    color: ${({theme}) => theme.colors.tertiary};
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 10px 0;
+`;
+
+const StyledSecondaryButtonContainer = styled.div`
+    align-items: right;
+    display: flex;
+    margin-bottom: 10px;
 `;
 
 export const PollResults: React.FC<PollResultsProps> = ({
@@ -99,6 +123,13 @@ export const PollResults: React.FC<PollResultsProps> = ({
                     />
                 ))
             }
+            <StyledButtonContainer>
+                <StyledTotalVoteContainer>Total votes: { totalVotes }</StyledTotalVoteContainer>
+                <StyledSecondaryButtonContainer>
+                    <LinkButton href={"/" + pollId}>Vote</LinkButton>
+                    <ShareButton />
+                </StyledSecondaryButtonContainer>
+            </StyledButtonContainer>
         </StyledPollResults>
     );
 };

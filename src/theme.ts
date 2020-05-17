@@ -54,7 +54,7 @@ export const baseTheme: DefaultTheme = {
         accent: '#ff6768',
         pollBackground: '#263859',
         pollText: '#a9b7cd',
-        resultBackground: '#a9b7cd',
+        resultBackground: '#263859',
     },
 
     padding: {

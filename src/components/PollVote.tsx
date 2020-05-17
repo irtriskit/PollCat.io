@@ -37,6 +37,7 @@ const StyledButtonContainer = styled.div`
 const StyledSecondaryButtonContainer = styled.div`
     align-items: right;
     display: flex;
+    margin-bottom: 10px;
 `;
 
 const StyledDiv = styled.div`
