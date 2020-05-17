@@ -16,6 +16,7 @@ const StyledLabel = styled.span`
 const StyledPollOptionVote = styled.label`
     flex: 1 0 auto;
     display: flex;
+    cursor: pointer;
     background: ${({theme}) => theme.colors.pollBackground};
     align-items: center;
     padding: 15px;

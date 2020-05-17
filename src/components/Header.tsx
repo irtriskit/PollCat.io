@@ -26,6 +26,8 @@ const StyledHeader = styled.header`
     button {
         border: none;
         margin: 0;
+        height: 64px;
+        width: 64px;
         padding: 0;
         cursor: pointer;
         -webkit-appearance: none;

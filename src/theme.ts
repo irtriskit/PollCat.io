@@ -22,6 +22,7 @@ declare module 'styled-components' {
             pollBackground: string;
             pollText: string;
             resultBackground: string;
+            resultText: string;
         };
 
         padding: ISizes;
@@ -54,7 +55,8 @@ export const baseTheme: DefaultTheme = {
         accent: '#ff6768',
         pollBackground: '#263859',
         pollText: '#a9b7cd',
-        resultBackground: '#263859',
+        resultBackground: '#a9b7cd',
+        resultText: '#17223b',
     },
 
     padding: {
@@ -89,6 +91,7 @@ export const strawTheme: DefaultTheme = {
         pollBackground: '#ffd756',
         pollText: '#222222',
         resultBackground: '#ffd756',
+        resultText: '#222222',
     },
 
     padding: {
