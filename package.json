@@ -12,6 +12,7 @@
     "express": "^4.17.1",
     "next": "9.3.6",
     "react": "16.13.1",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "16.13.1",
     "react-gtm-module": "^2.0.0",
     "styled-components": "^5.1.0"

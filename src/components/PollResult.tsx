@@ -13,7 +13,7 @@ const StyledPollResult = styled.div`
 `;
 
 const StyledLabel = styled.div`
-    color: ${({theme}) => theme.colors.secondary};
+    color: ${({theme}) => theme.colors.resultText};
     font-family: ${({theme}) => theme.font.family};
     margin-left: ${({theme}) => theme.padding[ESizes.smallest]};
     font-size: ${({theme}) => theme.font.sizes[ESizes.regular]};

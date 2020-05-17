@@ -5,15 +5,15 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import { ESizes } from '../models/Sizes';
-import { lighten } from '../helpers/ColorHelper';
 import { PollData } from '../models/Poll';
 import { Vote } from '../models/Vote';
 import { AxiosResponse } from 'axios';
 import { PollApi } from '../helpers/PollApi';
 import { PollOptionVote } from './PollOptionVote';
-import { Urls } from '../Urls';
 import Router from "next/router";
-// import { isFirstParty } from '../helpers/AppHelper';
+import { PrimaryButton } from './PrimaryButton';
+import { LinkButton } from './LinkButton';
+import { ShareButton } from './ShareButton';
 
 const StyledPollVote = styled.form<PollVoteProps>`
     width: 100%;
@@ -28,24 +28,17 @@ const StyledPollTitle = styled.h2`
     color: ${({theme}) => theme.colors.tertiary};
 `;
 
-const StyledButton = styled.button`
-    background-color: ${({theme}) => theme.colors.tertiary};
-    border-radius: 2px;
-    color: ${({theme}) => theme.colors.primary};
-    outline: none;
-    border-width: 0;
-    font-family: ${({theme}) => theme.font.family};
-    font-size: ${({theme}) => theme.font.sizes[ESizes.large]};
-    margin-top: 15px;
-    padding: ${({theme}) => `${theme.font.sizes[ESizes.smaller]} ${theme.font.sizes[ESizes.largest]}`};
-    
-    &:hover {
-        background-color: ${({theme}) => lighten(theme.colors.tertiary, 10)};
-    }
-    
-    &:active {
-        background-color: ${({theme}) => lighten(theme.colors.tertiary, 20)};
-    }
+const StyledButtonContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+`;
+
+const StyledSecondaryButtonContainer = styled.div`
+    align-items: right;
+    display: flex;
+    margin-bottom: 10px;
 `;
 
 const StyledDiv = styled.div`
@@ -114,9 +107,13 @@ export const PollVote: React.FC<PollVoteProps> = ({
                     );
                 })
             }
-            <div>
-                <StyledButton type={'submit'}>Submit Vote</StyledButton>
-            </div>
+            <StyledButtonContainer>
+                <PrimaryButton type={'submit'}>Vote</PrimaryButton>
+                <StyledSecondaryButtonContainer>
+                    <LinkButton href={pollId + '/results'}>Results</LinkButton>
+                    <ShareButton />
+                </StyledSecondaryButtonContainer>
+            </StyledButtonContainer>
         </StyledPollVote>
     );
 };
