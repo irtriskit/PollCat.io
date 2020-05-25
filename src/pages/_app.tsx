@@ -8,15 +8,12 @@ import { useStrawTheme } from '../useStrawTheme';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-    const tagManagerArgs = {
-        gtmId: 'GTM-5JNZP5T'
-    }
-
-    // Similar to componentDidMount and componentDidUpdate:  
-    useEffect(() => {    
-        // Update the document title using the browser API    
+    useEffect(() =>  {
+        const tagManagerArgs = {
+          gtmId: 'GTM-5JNZP5T'
+        }
         TagManager.initialize(tagManagerArgs)
-    });
+    }, [])
 
     const [theme, toggleTheme, componentMounted] = useStrawTheme();
 
