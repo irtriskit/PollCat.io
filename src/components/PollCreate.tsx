@@ -85,7 +85,7 @@ export const PollCreate = () => {
         PollApi.postPoll(poll)
             .then((response) => {
                 // if (isFirstParty) {
-                Router.push('/[id]/vote', `/${response.data}/vote`);
+                Router.push('/[id]', `/${response.data}`);
                 // }
             })
             .catch(console.error);
